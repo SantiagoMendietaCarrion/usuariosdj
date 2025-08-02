@@ -11,7 +11,7 @@ class User(AbstractUser, PermissionsMixin):
     )
 
     username = models.CharField(max_length=10, unique=True)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     nombres = models.CharField(max_length=30, blank=True)
     apellidos = models.CharField(max_length=30, blank=True)
     genero = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
